@@ -1276,22 +1276,28 @@ display:none;
 
     .lista-personagens {
         width: 100%;
+        justify-content: center;
         gap: 10px;
         margin-top: 4px;
     }
 
     .lista-personagens a {
-        width: 100%;
-        min-width: 0;
-        justify-content: flex-start;
-        padding: 10px 12px;
+        flex: 1 1 calc(50% - 10px);
+        width: auto;
+        max-width: 170px;
+        min-width: 135px;
+        justify-content: center;
+        text-align: center;
+        padding: 10px 10px;
+        gap: 8px;
         box-sizing: border-box;
-        font-size: 15px;
+        font-size: 14px;
+        line-height: 1.25;
     }
 
     .lista-personagens img {
-        width: 42px;
-        height: 42px;
+        width: 38px;
+        height: 38px;
     }
 
     .shikigamis,
@@ -1393,7 +1399,61 @@ display:none;
     }
 
     .barra-progresso {
-        display: none !important;
+        display: flex !important;
+        flex-direction: column;
+        gap: 8px;
+        width: calc(100% - 28px);
+        margin: 0 auto 14px;
+        padding: 12px 14px;
+        border: 2px solid #e50914;
+        border-radius: 16px;
+        background: rgba(0, 0, 0, 0.92);
+        box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
+        box-sizing: border-box;
+    }
+
+    .barra-progresso-topo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: #f4f4f4;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .barra-progresso-topo strong {
+        color: #ffb3b7;
+        font-size: 12px;
+    }
+
+    .barra-progresso-trilha {
+        width: 100%;
+        height: 10px;
+        border: 2px solid rgba(229, 9, 20, 0.85);
+        border-radius: 999px;
+        background: #090909;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .barra-progresso-preenchimento {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #e50914 0%, #ff5b63 100%);
+    }
+
+    .light .barra-progresso {
+        background: rgba(255, 255, 255, 0.94);
+    }
+
+    .light .barra-progresso-topo {
+        color: #000000;
+    }
+
+    .light .barra-progresso-topo strong {
+        color: #8b1f25;
     }
 }
 

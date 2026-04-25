@@ -266,6 +266,13 @@ function criarBarraDeProgresso() {
         </div>
     `;
 
+    const primeiroContainer = document.querySelector(".container");
+
+    if (primeiroContainer && primeiroContainer.parentNode) {
+        primeiroContainer.parentNode.insertBefore(barra, primeiroContainer);
+        return;
+    }
+
     document.body.appendChild(barra);
 }
 
