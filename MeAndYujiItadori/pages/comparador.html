@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparador de Personagens</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+</head>
+
+<body>
+<canvas id="particulas"></canvas>
+
+    <button id="tema" class="botao-tema" aria-label="Alternar tema">
+        <span>☀︎</span>
+    </button>
+
+    <div class="container comparador-page">
+
+        <div class="card comparador-card">
+            <h1>Comparador de Personagens</h1>
+
+            <p>
+                Escolha dois personagens para ver lado a lado os pontos que mais marcam cada um.
+            </p>
+
+            <div class="comparador-controles">
+                <div class="comparador-campo">
+                    <label for="personagemA">Personagem 1</label>
+                    <select id="personagemA"></select>
+                </div>
+
+                <div class="comparador-versus">VS</div>
+
+                <div class="comparador-campo">
+                    <label for="personagemB">Personagem 2</label>
+                    <select id="personagemB"></select>
+                </div>
+            </div>
+
+            <div class="comparador-grid" id="comparadorResultado"></div>
+        </div>
+
+    </div>
+
+</body>
+</html>

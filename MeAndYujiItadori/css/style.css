@@ -3,6 +3,7 @@ body {
     transition: opacity 0.4s ease;
     visibility: hidden;
     margin: 0;
+    position: relative;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -133,7 +134,7 @@ a:hover {
 
 .botao-tema {
     box-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
-    position: fixed;
+    position: absolute;
     top: 30px;
     right: 30px;
     background: #000;
@@ -171,7 +172,7 @@ footer p {
 }
 
 #tema {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
 
@@ -227,12 +228,10 @@ body {
 
 body.saindo {
     opacity: 0;
-    transform: translateX(-40px);
 }
 
 body.entrando {
     opacity: 0;
-    transform: translateX(40px);
 }
 
 @keyframes brilho-card {
@@ -286,6 +285,50 @@ flex-direction:column;
 align-items:center;
 }
 
+.filtro-categorias{
+position:absolute;
+top:20px;
+left:20px;
+display:flex;
+flex-direction:column;
+gap:8px;
+width:220px;
+padding:14px 16px;
+border:3px solid #e50914;
+border-radius:18px;
+background:rgba(0, 0, 0, 0.92);
+box-shadow:0 0 14px rgba(229, 9, 20, 0.55);
+backdrop-filter:blur(6px);
+z-index:999;
+}
+
+.filtro-categorias label{
+font-size:13px;
+letter-spacing:0.08em;
+text-transform:uppercase;
+font-weight:bold;
+color:#ffb3b7;
+}
+
+.filtro-categorias select{
+width:100%;
+padding:12px 14px;
+border:2px solid rgba(229, 9, 20, 0.85);
+border-radius:12px;
+background:#090909;
+color:#f4f4f4;
+font-size:16px;
+font-weight:bold;
+box-shadow:inset 0 0 10px rgba(229, 9, 20, 0.15);
+outline:none;
+appearance:none;
+cursor:pointer;
+}
+
+.filtro-categorias select:focus{
+box-shadow:0 0 18px rgba(229, 9, 20, 0.6);
+}
+
 .botao-nav {
     display: block;
     width: fit-content;
@@ -331,6 +374,19 @@ align-items:center;
 .light .botao-nav:hover {
     background: #e50914;
     color: #ffffff;
+}
+
+.light .filtro-categorias label{
+color:#8b1f25;
+}
+
+.light .filtro-categorias select{
+background:#ffffff;
+color:#000000;
+}
+
+.light .filtro-categorias{
+background:rgba(255, 255, 255, 0.94);
 }
 
 
@@ -415,6 +471,10 @@ object-fit:cover;
 object-position:center 28%;
 }
 
+.banner-vermelho-destaque{
+object-position:center 18%;
+}
+
 .banner-rotacionado{
 position:relative;
 overflow:hidden;
@@ -438,7 +498,10 @@ z-index:1;
 
 #tema,
 .botao-tema{
-z-index:10;
+position:absolute;
+top:20px;
+right:20px;
+z-index:999;
 }
 
 #titulo-pg5{
@@ -470,7 +533,7 @@ line-height:1.6;
 .botoes-principais{
 display:flex;
 justify-content:center;
-gap:15px;
+gap:6px;
 
 width:100%;
 max-width:320px;
@@ -479,7 +542,8 @@ margin:20px auto;
 }
 
 .botoes-principais .botao-nav{
-flex:1;
+flex:0 0 auto;
+margin:0;
 text-align:center;
 }
 
@@ -902,4 +966,640 @@ color:#000000;
 
 .light .detalhe-titulo{
 color:#e50914;
+}
+
+.comparador-card{
+display:flex;
+flex-direction:column;
+gap:24px;
+}
+
+.comparador-card h1,
+.comparador-card > p{
+text-align:center;
+}
+
+.comparador-controles{
+display:flex;
+flex-wrap:wrap;
+align-items:flex-end;
+justify-content:center;
+gap:18px;
+margin-top:6px;
+}
+
+.comparador-campo{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.comparador-campo label{
+font-size:14px;
+font-weight:bold;
+text-transform:uppercase;
+letter-spacing:0.06em;
+}
+
+.comparador-campo select{
+min-width:220px;
+padding:14px 16px;
+border:2px solid #e50914;
+border-radius:14px;
+background:#050505;
+color:#f4f4f4;
+font-size:16px;
+font-weight:bold;
+box-shadow:0 0 12px rgba(229,9,20,0.3);
+outline:none;
+}
+
+.comparador-versus{
+display:flex;
+align-items:center;
+justify-content:center;
+width:54px;
+height:54px;
+border:2px solid #e50914;
+border-radius:50%;
+color:#ffb3b7;
+font-weight:bold;
+font-size:18px;
+box-shadow:0 0 12px rgba(229,9,20,0.3);
+}
+
+.comparador-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:18px;
+}
+
+.comparador-coluna{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+.comparador-personagem{
+padding:24px;
+border:2px solid #e50914;
+border-radius:18px;
+background:#000000;
+box-shadow:0 0 16px rgba(229,9,20,0.3);
+}
+
+.comparador-imagem{
+display:block;
+width:140px;
+height:140px;
+margin:0 auto 16px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #e50914;
+box-shadow:0 0 18px rgba(229,9,20,0.5);
+}
+
+.comparador-personagem h2{
+margin:0 0 12px;
+text-align:center;
+font-size:30px;
+}
+
+.comparador-tags{
+display:flex;
+justify-content:center;
+margin-bottom:18px;
+}
+
+.comparador-tags span{
+padding:8px 14px;
+border:1px solid #e50914;
+border-radius:999px;
+color:#ffb3b7;
+font-size:13px;
+font-weight:bold;
+text-transform:uppercase;
+letter-spacing:0.06em;
+}
+
+.comparador-linhas{
+display:grid;
+gap:14px;
+}
+
+.comparador-linha{
+padding:14px 16px;
+border:1px solid rgba(229,9,20,0.45);
+border-radius:14px;
+background:rgba(229,9,20,0.06);
+}
+
+.comparador-linha strong{
+display:block;
+margin-bottom:8px;
+color:#ffb3b7;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:0.06em;
+}
+
+.comparador-linha p{
+margin:0;
+text-align:left;
+}
+
+.comparador-acao{
+display:flex;
+justify-content:center;
+}
+
+.comparador-acao .botao-nav{
+margin:0;
+}
+
+.comparador-acoes-centrais{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:14px;
+grid-column:1 / -1;
+margin-top:4px;
+}
+
+.comparador-acoes-centrais .botao-nav{
+margin:0;
+min-width:0;
+padding:12px 18px;
+font-size:16px;
+text-align:center;
+}
+
+.light .comparador-campo select,
+.light .comparador-personagem{
+background:#ffffff;
+color:#000000;
+}
+
+.light .comparador-tags span,
+.light .comparador-linha strong{
+color:#8b1f25;
+}
+
+.light .comparador-linha{
+background:rgba(229,9,20,0.06);
+}
+
+.barra-progresso{
+display:none;
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+        min-height: 100vh;
+        padding: 84px 0 28px;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 16px;
+    }
+
+    .container,
+    .dez-sombras .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 14px;
+        box-sizing: border-box;
+        gap: 18px;
+    }
+
+    .card,
+    .dez-sombras .card,
+    .comparador-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px 18px;
+        box-sizing: border-box;
+        border-radius: 16px;
+    }
+
+    .card p,
+    .detalhe-item p,
+    .bloco-info p,
+    .comparador-linha p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    #tema,
+    .botao-tema {
+        top: 14px;
+        right: 14px;
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .filtro-categorias {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 14px;
+        margin: 0 0 6px;
+        border-radius: 16px;
+        box-sizing: border-box;
+    }
+
+    .filtro-categorias label {
+        font-size: 12px;
+    }
+
+    .filtro-categorias select {
+        font-size: 15px;
+        padding: 11px 12px;
+    }
+
+    .avatar,
+    .dez-sombras .avatar {
+        width: 118px;
+        height: 118px;
+        margin: 0 0 12px;
+    }
+
+    .banner-anime {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        margin: 0 0 4px;
+    }
+
+    .banner-kenjaku {
+        width: 100%;
+        max-width: 100%;
+        height: 200px;
+        margin: 18px 0 22px;
+    }
+
+    .banner-rotacionado {
+        width: 100%;
+        height: 200px;
+    }
+
+    .banner-rotacionado-img {
+        width: 160px;
+        height: 460px;
+    }
+
+    .botoes-principais,
+    .nav-botoes,
+    .comparador-acoes-centrais {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 12px auto 0;
+    }
+
+    .botoes-principais .botao-nav,
+    .nav-botoes .botao-nav,
+    .comparador-acoes-centrais .botao-nav {
+        width: auto;
+        min-width: 0;
+        padding: 11px 16px;
+        margin: 0;
+        font-size: 15px;
+    }
+
+    .lista-personagens {
+        width: 100%;
+        gap: 10px;
+        margin-top: 4px;
+    }
+
+    .lista-personagens a {
+        width: 100%;
+        min-width: 0;
+        justify-content: flex-start;
+        padding: 10px 12px;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+
+    .lista-personagens img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .shikigamis,
+    .dez-sombras .shikigamis {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .shikigamis a,
+    .shikigamis button,
+    .dez-sombras .shikigamis a,
+    .dez-sombras .shikigamis button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 12px 14px;
+    }
+
+    .detalhes-personagem {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .bloco-info {
+        padding: 16px;
+        margin-top: 18px;
+    }
+
+    .bloco-info h2 {
+        font-size: 20px;
+    }
+
+    .comparador-card {
+        gap: 18px;
+    }
+
+    .comparador-controles {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .comparador-campo {
+        width: 100%;
+    }
+
+    .comparador-campo select {
+        min-width: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .comparador-versus {
+        width: 46px;
+        height: 46px;
+        margin: 0 auto;
+        font-size: 16px;
+    }
+
+    .comparador-grid {
+        gap: 14px;
+    }
+
+    .comparador-personagem {
+        padding: 18px 14px;
+        border-radius: 16px;
+    }
+
+    .comparador-imagem {
+        width: 108px;
+        height: 108px;
+    }
+
+    .comparador-personagem h2 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .comparador-tags {
+        margin-bottom: 14px;
+    }
+
+    .comparador-tags span {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .comparador-linha {
+        padding: 12px 13px;
+    }
+
+    .rodape p {
+        max-width: 100%;
+    }
+
+    .barra-progresso {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    body {
+        align-items: flex-start;
+        padding: 32px 0 48px;
+        box-sizing: border-box;
+    }
+
+    .container,
+    .dez-sombras .container {
+        width: min(100%, 1100px);
+        margin: 0 auto;
+        padding: 118px 24px 0;
+        box-sizing: border-box;
+        gap: 28px;
+    }
+
+    .card,
+    .dez-sombras .card {
+        width: min(100%, 760px);
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 36px 40px;
+    }
+
+    .comparador-card{
+        width:min(100%, 980px);
+    }
+
+    .comparador-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+    .filtro-categorias {
+        width:240px;
+        top:24px;
+        left:24px;
+    }
+
+    .barra-progresso {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: min(100%, 340px);
+        padding: 14px 18px;
+        border: 3px solid #e50914;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.92);
+        box-shadow: 0 0 14px rgba(229, 9, 20, 0.55);
+        backdrop-filter: blur(6px);
+        z-index: 999;
+        box-sizing: border-box;
+    }
+
+    .barra-progresso-topo {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        color: #f4f4f4;
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .barra-progresso-topo strong {
+        color: #ffb3b7;
+        font-size: 14px;
+    }
+
+    .barra-progresso-trilha {
+        width: 100%;
+        height: 12px;
+        border: 2px solid rgba(229, 9, 20, 0.85);
+        border-radius: 999px;
+        background: #090909;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .barra-progresso-preenchimento {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #e50914 0%, #ff5b63 100%);
+        box-shadow: 0 0 14px rgba(229, 9, 20, 0.6);
+    }
+
+    .card p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .avatar,
+    .dez-sombras .avatar {
+        width: 180px;
+        height: 180px;
+        max-width: 100%;
+        padding: 0;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0;
+    }
+
+    .banner-anime {
+        display: block;
+        width: min(100%, 720px);
+        height: 300px;
+        max-height: none;
+        padding: 0;
+        object-fit: cover;
+        border-radius: 18px;
+        margin: 0 auto 8px;
+    }
+
+    .banner-kenjaku {
+        width: min(100%, 560px);
+        height: 240px;
+        object-fit: cover;
+        object-position: center 28%;
+        margin: 24px auto 30px;
+    }
+
+    .banner-rotacionado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: min(100%, 720px);
+        height: 300px;
+        min-height: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: 3px solid #e50914;
+        border-radius: 18px;
+        box-shadow: 0 0 25px rgba(229,9,20,0.9);
+        background: #000000;
+        overflow: hidden;
+    }
+
+    .banner-rotacionado-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        object-fit: cover;
+        object-position: center;
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    .nav-botoes,
+    .botoes-principais,
+    .lista-personagens,
+    .shikigamis,
+    .dez-sombras .shikigamis {
+        width: min(100%, 760px);
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+
+    .botoes-principais {
+        max-width: none;
+        justify-content: center;
+    }
+
+    .botoes-principais .botao-nav,
+    .nav-botoes .botao-nav {
+        min-width: 0;
+        padding: 12px 18px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .lista-personagens {
+        gap: 16px;
+        margin-top: 8px;
+    }
+
+    .lista-personagens a {
+        flex: 0 1 260px;
+        width: 260px;
+        min-width: 0;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
+    .lista-personagens img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .light .barra-progresso {
+        background: rgba(255, 255, 255, 0.94);
+    }
+
+    .light .barra-progresso-topo {
+        color: #000000;
+    }
+
+    .light .barra-progresso-topo strong {
+        color: #8b1f25;
+    }
 }

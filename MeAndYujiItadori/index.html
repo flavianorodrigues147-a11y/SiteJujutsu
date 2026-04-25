@@ -15,6 +15,16 @@
 
 <div class="container">
 
+    <div class="filtro-categorias">
+        <label for="filtroCategoria">Categoria</label>
+        <select id="filtroCategoria" aria-label="Filtrar personagens por categoria">
+            <option value="todos">Todos</option>
+            <option value="alunos">Alunos</option>
+            <option value="sensei">Sensei</option>
+            <option value="viloes">Viloes</option>
+        </select>
+    </div>
+
     <img src="images/itadori.png" class="avatar">
 
     <div class="card">
@@ -45,24 +55,25 @@
 
         <a href="pages/pg1.html" class="botao-nav">Continuar</a>
         <button class="botao-nav" onclick="toggleMenu()">Personagens</button>
+        <a href="pages/comparador.html" class="botao-nav">Comparador</a>
 
     </div>
 
     <div class="lista-personagens" id="listaPersonagens">
 
-        <a href="pagesGojo/pg1.html">
+        <a href="pagesGojo/pg1.html" data-categoria="sensei">
         <img src="images/gojo.jpg">
         <span>Satoru Gojo</span></a>
 
-        <a href="pagesMegumi/pg1.html">
+        <a href="pagesMegumi/pg1.html" data-categoria="alunos">
         <img src="images/megumi.jpg">
         <span>Megumi Fushiguro</span></a>
 
-        <a href="pagesNobara/pg1.html">
+        <a href="pagesNobara/pg1.html" data-categoria="alunos">
         <img src="images/nobara.jpg">
         <span>Nobara Kugisaki</span></a>
 
-        <a href="pagesKenjaku/pg1.html">
+        <a href="pagesKenjaku/pg1.html" data-categoria="viloes">
         <img src="images/kenjaku-botao.jpg">
         <span>Kenjaku / Geto</span></a>
 
