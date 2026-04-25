@@ -1,0 +1,5 @@
+[build]
+  publish = "MeAndYujiItadori"
+
+[build.environment]
+  NODE_VERSION = "20"
