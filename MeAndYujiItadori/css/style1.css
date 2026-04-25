@@ -1,0 +1,218 @@
+/* ===== BASE ===== */
+body {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    visibility: hidden;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000000;
+    color: #f4f4f4;
+}
+
+/* ===== LAYOUT ===== */
+
+.container{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:80vh;
+padding:20px;
+}
+
+.card {
+    width: 90%;
+    max-width: 800px;
+
+    padding: 50px;
+
+    border: 2px solid #e50914;
+    background: #000000;
+
+    border-radius: 8px;
+
+    animation: brilho-card 2.5s infinite alternate;
+    line-height: 1.9; /* melhora leitura */
+}
+
+/* ===== NAVEGAÇÃO ===== */
+
+nav ul{
+list-style:none;
+display:flex;
+gap:35px;
+padding:0;
+margin:15px 0;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+nav ul li a{
+
+display:inline-block;
+
+padding:18px 45px;
+
+border:3px solid #e50914;
+border-radius:12px;
+
+background:#000;
+color:#ff0000;
+
+font-weight:bold;
+font-size:1.2rem;
+
+text-decoration:none;
+
+transition:all 0.3s ease;
+
+box-shadow:0 0 18px rgba(229,9,20,0.9);
+}
+
+nav ul li a:hover{
+background:#e50914;
+color:#fff;
+transform:scale(1.07);
+}
+
+/* ===== TIPOGRAFIA ===== */
+
+h1{
+text-align:center;
+font-size:2.8rem;
+margin-top:10px;
+}
+
+p{
+text-align:justify;
+font-size:1.2rem;
+margin-top:18px;
+}
+
+footer p{
+text-align:center;
+font-size:1rem;
+}
+
+/* ===== RODAPÉ ===== */
+
+.rodape{
+margin-top:50px;
+text-align:center;
+font-size:13px;
+color:#aaa;
+}
+
+.rodape a{
+text-decoration:none;
+font-weight:bold;
+color:#e50914;
+}
+
+/* ===== AVATAR ===== */
+
+.avatar{
+width:200px;
+height:200px;
+
+border-radius:50%;
+object-fit:cover;
+
+border:3px solid #e50914;
+
+box-shadow:0 0 20px rgba(229,9,20,0.9);
+
+margin-bottom:40px;
+}
+
+/* Layout para celular */
+@media (max-width: 768px) {
+
+.card{
+width:96%;
+padding:40px;
+}
+
+h1{
+font-size:3.2rem;
+}
+
+p{
+font-size:1.5rem;
+line-height:1.8;
+}
+
+nav ul{
+flex-direction:column;
+gap:30px;
+}
+
+nav ul li a{
+width:95%;
+padding:28px;
+font-size:1.5rem;
+}
+
+.avatar{
+width:210px;
+height:210px;
+}
+
+}
+
+
+/* ===== ANIMAÇÃO ===== */
+
+@keyframes brilho-card{
+
+0%{box-shadow:0 0 10px rgba(229,9,20,0.4);}
+50%{box-shadow:0 0 25px rgba(229,9,20,0.9);}
+100%{box-shadow:0 0 10px rgba(229,9,20,0.4);}
+
+}
+
+/* ===== PARTÍCULAS ===== */
+
+#particulas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* ===== CLICK BOTÃO ===== */
+
+nav ul li a:active{
+transform:scale(0.95);
+}
+
+/* ===== TEMA CLARO ===== */
+
+.light{
+background:#fff;
+color:#000;
+}
+
+.light .card{
+background:#fff;
+color:#000;
+}
+
+.light h1,
+.light p,
+.light footer p{
+color:#000;
+}
+
+.light nav ul li a{
+background:#fff;
+color:#e50914;
+border:3px solid #e50914;
+}
+
+.light nav ul li a:hover{
+background:#e50914;
+color:#fff;
+}

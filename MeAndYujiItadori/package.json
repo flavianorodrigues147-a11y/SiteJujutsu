@@ -1,0 +1,25 @@
+{
+  "name": "meandyujiitadori",
+  "version": "1.0.0",
+  "description": "Um mini site responsivo inspirado no anime **Jujutsu Kaisen**, desenvolvido com **HTML, CSS e JavaScript puro**.\r O projeto apresenta algumas páginas informativas sobre o personagem **Yuji Itadori** e uma recomendação final sobre assistir o anime.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flavianorodrigues147-a11y/MeAndYujiItadori.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/flavianorodrigues147-a11y/MeAndYujiItadori/issues"
+  },
+  "homepage": "https://github.com/flavianorodrigues147-a11y/MeAndYujiItadori#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
